@@ -1,0 +1,10 @@
+CREATE INDEX idx_issuances_institution ON issuances(institution_id);
+CREATE INDEX idx_issuances_course ON issuances(course_id);
+CREATE INDEX idx_issuances_verification ON issuances(verification_hash);
+CREATE INDEX idx_issuances_status ON issuances(status);
+CREATE INDEX idx_email_queue_status ON email_queue(status, scheduled_for);
+CREATE INDEX idx_courses_institution ON courses(institution_id);
+CREATE INDEX idx_payments_institution ON payments(institution_id);
+CREATE INDEX idx_payments_tx ON payments(tx_hash);
+CREATE INDEX idx_audit_log_actor ON audit_log(actor_type, actor_id);
+CREATE INDEX idx_audit_log_created ON audit_log(created_at DESC);
