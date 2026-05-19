@@ -1,18 +1,23 @@
 {
-  "name": "backend",
+  "name": "imperialseal-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon server.js",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "ImperialSeal — Blockchain Certificate & Badge Issuance Platform API",
+  "main": "server.js",
   "type": "commonjs",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop imperialseal-api",
+    "pm2:restart": "pm2 restart imperialseal-api",
+    "pm2:logs": "pm2 logs imperialseal-api",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --forceExit"
+  },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1049.0",
+    "@aws-sdk/s3-request-presigner": "^3.600.0",
     "@sendgrid/mail": "^8.1.6",
     "@supabase/supabase-js": "^2.106.0",
     "algosdk": "^3.5.2",
@@ -31,9 +36,17 @@
     "papaparse": "^5.5.3",
     "puppeteer": "^25.0.4",
     "qrcode": "^1.5.4",
-    "sharp": "^0.34.5"
+    "sharp": "^0.34.5",
+    "uuid": "^10.0.0",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
