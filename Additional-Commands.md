@@ -2,3 +2,13 @@ $dirs=@('imperialseal','imperialseal/deploy','imperialseal/backend','imperialsea
 
 
 to create all folders and files
+
+
+
+
+to update Git Ignore
+
+
+git rm -r --cached .
+git add .
+git commit -m "Update .gitignore and remove ignored files from tracking"
