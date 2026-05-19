@@ -12,3 +12,11 @@ to update Git Ignore
 git rm -r --cached .
 git add .
 git commit -m "Update .gitignore and remove ignored files from tracking"
+
+
+
+git push commands 
+
+git add .
+git commit -m "feat: your message"
+git push
